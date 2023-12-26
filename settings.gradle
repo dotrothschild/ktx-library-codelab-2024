@@ -15,14 +15,6 @@
  */
 
 rootProject.name='ktx-library-codelab'
-include ':work:app'
-include ':work:myktxlibrary'
 
-include ':step-03:app'
-include ':step-03:myktxlibrary'
-
-include ':step-05:app'
-include ':step-05:myktxlibrary'
-
-include ':step-06:app'
-include ':step-06:myktxlibrary'
+include ':core:app'
+include ':core:myktxlibrary'
