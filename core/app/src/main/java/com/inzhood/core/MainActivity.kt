@@ -1,36 +1,19 @@
-/*
- * Copyright 2019 Google LLC
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     https://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
-package com.example.android.kotlinktxworkshop
+package com.inzhood.core
 
 import android.Manifest.permission.ACCESS_FINE_LOCATION
 import android.content.pm.PackageManager
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.Observer
 import androidx.lifecycle.asLiveData
 import androidx.lifecycle.lifecycleScope
-import com.example.android.myktxlibrary.awaitLastLocation
-import com.example.android.myktxlibrary.findAndSetText
-import com.example.android.myktxlibrary.hasPermission
-import com.example.android.myktxlibrary.locationFlow
-import com.example.android.myktxlibrary.showLocation
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
+import com.inzhood.core.library.awaitLastLocation
+import com.inzhood.core.library.findAndSetText
+import com.inzhood.core.library.hasPermission
+import com.inzhood.core.library.locationFlow
+import com.inzhood.core.library.showLocation
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.conflate
 import kotlinx.coroutines.launch
@@ -75,10 +58,10 @@ class MainActivity : AppCompatActivity() {
                 Log.d(TAG, "Unable to get location", e)
             }
             .asLiveData()
-            .observe(this, Observer { location ->
+            .observe(this) { location ->
                 showLocation(R.id.textView, location)
                 Log.d(TAG, location.toString())
-            })
+            }
     }
 
     override fun onRequestPermissionsResult(
@@ -92,4 +75,4 @@ class MainActivity : AppCompatActivity() {
     }
 }
 
-const val TAG = "KTXCODELAB"
+const val TAG = "INZHOOD"
