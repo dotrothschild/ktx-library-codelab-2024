@@ -1,4 +1,4 @@
-rootProject.name = 'ktx-library-inzhood'
+rootProject.name = 'ktx-library.gps-inzhood'
 
 include ':core:app'
 include ':core:inzhoodgpslibrary'
