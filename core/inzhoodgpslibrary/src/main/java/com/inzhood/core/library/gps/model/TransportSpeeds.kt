@@ -18,7 +18,7 @@ class TransportSpeeds {
 
         fun getLocationUpdatesForMode(mode: String): Long {
             val transportSpeed = speeds.find { it.modeKey == mode }
-            return transportSpeed?.updateFrequencyMs ?: 2000L
+            return transportSpeed?.updateFrequencyMs ?: 20000L
 
         }
 

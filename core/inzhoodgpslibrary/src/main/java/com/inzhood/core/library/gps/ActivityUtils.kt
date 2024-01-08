@@ -1,4 +1,4 @@
-package com.inzhood.core.library
+package com.inzhood.core.library.gps
 
 import android.app.Activity
 import android.content.pm.PackageManager

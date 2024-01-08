@@ -7,8 +7,8 @@ android {
         applicationId "com.inzhood.core"
         minSdkVersion 33
         targetSdkVersion 34
-        versionCode 1
-        versionName "1.0"
+        versionCode 2
+        versionName "1.1"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -17,7 +17,16 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt')
         }
     }
+    buildFeatures {
+        buildConfig = true
+        viewBinding true
+    }
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
     kotlinOptions {
+        jvmTarget = "1.8" // Set the JVM target to match Java's version
         freeCompilerArgs += "-Xuse-experimental=kotlinx.coroutines.ExperimentalCoroutinesApi"
     }
     namespace 'com.inzhood.core'
@@ -26,4 +35,10 @@ android {
 dependencies {
     implementation project(":core:inzhoodgpslibrary")
     implementation app_libraries // Shimon: This is used
+    implementation 'androidx.appcompat:appcompat:1.6.1' // for the spinner
+
+    // Shimon adds for viewModelScope in viewModel
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2"
+    implementation "androidx.activity:activity-ktx:1.8.2"
+    implementation 'com.google.android.material:material:1.11.0'
 }

@@ -16,4 +16,7 @@
 
 <resources>
     <string name="app_name">InZhood Demo GPS Library</string>
+    <string name="no_location">Location not identified</string>
+    <string name="change_update_rate">Change rate</string>
+    <string name="select_rate_of_update">Rate of update</string>
 </resources>

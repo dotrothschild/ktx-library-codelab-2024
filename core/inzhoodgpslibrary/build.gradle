@@ -18,8 +18,15 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-
+    buildFeatures {
+        buildConfig = true
+    }
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
     kotlinOptions {
+        jvmTarget = "1.8" // Set the JVM target to match Java's version
         freeCompilerArgs += "-Xuse-experimental=kotlinx.coroutines.ExperimentalCoroutinesApi"
     }
     namespace 'com.example.android.inzhoodgpslibrary'
